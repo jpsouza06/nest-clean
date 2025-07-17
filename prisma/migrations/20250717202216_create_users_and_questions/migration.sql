@@ -25,9 +25,6 @@ CREATE TABLE "questions" (
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "users_password_key" ON "users"("password");
-
--- CreateIndex
 CREATE UNIQUE INDEX "questions_slug_key" ON "questions"("slug");
 
 -- AddForeignKey

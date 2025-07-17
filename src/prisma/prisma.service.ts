@@ -11,12 +11,10 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
   }
   onModuleInit() {
     this.$connect()
-      .then(() => console.log('Prisma connected'))
       .catch((error) => console.error('Prisma connection error:', error))
   }
   onModuleDestroy() {
     this.$disconnect()
-      .then(() => console.log('Prisma disconnected'))
       .catch((error) => console.error('Prisma connection error:', error))
   }
 }
