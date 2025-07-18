@@ -4,6 +4,7 @@ import { PrismaService } from 'src/prisma/prisma.service'
 import { hash } from 'bcryptjs'
 import { z } from 'zod'
 import { ZodValidationPipe } from 'src/pipes/zod-validation-pipe'
+import { Public } from 'src/auth/public'
 
 const createAccountBodySchema = z.object({
   name: z.string(),
@@ -14,6 +15,7 @@ const createAccountBodySchema = z.object({
 type CreateAccountBodySchema = z.infer<typeof createAccountBodySchema>
 
 @Controller('/accounts')
+@Public()
 export class CreateAccountController {
   constructor(private readonly prismaService: PrismaService) {}
 
